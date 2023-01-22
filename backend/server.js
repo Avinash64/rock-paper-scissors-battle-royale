@@ -27,10 +27,6 @@ io.on('connection', socket => {
     socket.on("send_message", (data) => {
         console.log(data)
         socket.broadcast.emit("receive_message", data)
-        for (let i = 0; i < 300; i++) {
-            socket.broadcast.emit("receive_n", {n: Math.random()})
-
-        }
     })
 
 
