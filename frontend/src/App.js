@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/welcome';
 import Lobbies from './components/lobbies';
+import Lobby from './components/lobby';
 
 import {
   BrowserRouter as Router,
@@ -17,7 +18,7 @@ function App() {
     <Routes>
     <Route path="/" element={<Welcome />} />
     <Route path="/lobbies" element={<Lobbies/>} />
-    {/* <Route path="/lobby" element={Lobby} /> */} 
+    <Route path="/lobby" element={<Lobby />} /> 
     </Routes>
     </div>
     </Router>

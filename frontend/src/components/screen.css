@@ -1,0 +1,33 @@
+.screen {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 70%;
+}
+
+.choices {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: center;
+    gap: 20%;
+    height: 50%;
+    /* background-color: blueviolet; */
+    align-items: center;
+}
+
+.choice {
+    background-color: aqua;
+    width: 20%;
+    height: 10%;
+}
+
+.name {
+    border-width: 2px;
+    border-style: solid;
+    height: 10%;
+    width: 80%;
+    text-align: center;
+}

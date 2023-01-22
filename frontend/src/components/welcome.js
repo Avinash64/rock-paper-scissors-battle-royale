@@ -4,33 +4,33 @@ import { useNavigate } from 'react-router-dom'
 import {io} from "socket.io-client"
 
 
-const socket = io("http://localhost:3001")
+// const socket = io("http://localhost:3001")
 
 
 
-socket.emit("updatedName", "bruh")
+// socket.emit("updatedName", "bruh")
 function Welcome() {
   let navigate = useNavigate();
   const [name,setname] = useState("")
-  const [isConnected, setIsConnected] = useState(socket.connected);
+  // const [isConnected, setIsConnected] = useState(socket.connected);
   const [lastPong, setLastPong] = useState(null);
 
   useEffect(() => {
-    socket.on('connect', () => {
-      setIsConnected(true);
-      console.log(`you connected with id: ${socket.id}`)
-    });
+    // socket.on('connect', () => {
+    //   setIsConnected(true);
+    //   console.log(`you connected with id: ${socket.id}`)
+    // });
 
-    socket.on('disconnect', () => {
-      setIsConnected(false);
-    });
+    // socket.on('disconnect', () => {
+    //   setIsConnected(false);
+    // });
   }, []);
 
 
   const sendPing = () => {
     // var a = name
-    // console.log({name})
-    socket.emit("updatedName", name);
+    // // console.log({name})
+    // socket.emit("updatedName", name);
   }
   return (
     <div className='welcomePage'>
@@ -41,8 +41,8 @@ function Welcome() {
         
         
         <button className='enter' 
-        // onClick={navigate("/lobbies")}
-        onClick={sendPing}
+        onClick={() => navigate("/lobby")}
+        // onClick={sendPing}
         >
           
           Drop in</button>

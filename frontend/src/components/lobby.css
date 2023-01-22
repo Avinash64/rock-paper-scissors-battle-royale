@@ -1,0 +1,11 @@
+.lob {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.ch {
+    height: 100%;
+    width: 30%;
+}

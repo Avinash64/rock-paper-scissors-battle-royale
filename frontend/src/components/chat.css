@@ -1,0 +1,18 @@
+.chat {
+    background-color: rgb(143, 152, 165);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.sentTxt {
+    background-color: aliceblue;
+}
+
+.send {
+    background-color: aliceblue;
+    width: 80%;
+    height: 5%;
+}
