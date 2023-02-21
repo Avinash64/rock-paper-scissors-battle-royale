@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import "./screen.css"
 import { io } from 'socket.io-client'
 
-const socket = io.connect("http://192.168.0.38:3001")
+const socket = io.connect("https://rpsbr.onrender.com")
 
 function Screen() {
     let [choice,setChoice] = useState("")
