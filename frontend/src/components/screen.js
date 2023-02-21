@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "./screen.css"
 import { io } from 'socket.io-client'
 
@@ -8,10 +8,21 @@ const socket = io.connect("http://192.168.0.38:3001")
 function Screen() {
     let [choice,setChoice] = useState("")
     let [name,setName] = useState("")
+    let [result,setResult] = useState("")
     
     const sendChoice = () => {
         socket.emit("send_message", {source:"game",name:name, choice:choice})
       };
+
+
+  useEffect(() => {
+    socket.on("result", (result) =>{
+    setResult(result)
+    console.log(result)
+    }
+    )
+
+  },[socket])
 
       const choose = (choice) => {
         setChoice(choice)
@@ -22,6 +33,7 @@ function Screen() {
             <div className='screen'>
             <input className='name' placeholder='Enter Name' onChange={(e) => setName(e.target.value)}
 ></input>
+            {result}
             {choice}
             <div className='choices'>
             <button className='choice' onClick={()=>choose("r")}>Rock</button>
